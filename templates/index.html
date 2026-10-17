@@ -11,6 +11,15 @@
       <th> Review </th>
     </tr>
   </thead>
+  <tbody>
+    {% for book in books %}
+    <tr>
+        <td>{{ book.title}} </td>
+        <td> {{ book.author}} </td>
+        <td> {{ book.completed}} </td>
+        <td> {{ book.review}} </td>
+    </tr>
+    {% endfor %}
 </table>
 {% endblock %}
 
