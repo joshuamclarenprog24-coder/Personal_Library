@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+<head>
+    <title>{% block title %}Personal Library{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+{% endblock %}
+<body>
+{% block title_bar %}
+<div class="title_bar">
+  {% for key in  title_bar %}
+  <div class="tag" id="tag{{key}}">
+    <p> {{ title_bar[key]["text"] }} </p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
+
+{% block main_container %}
+  <div class="main_container">
+    <div class="searchbar">
+        <input type="text" placeholder="Search books...">
+    </div>  
+    {% block search_buttons %}
+    <div> 
+      
+    </div>
+    {% endblock %}
+  </div>
+{% endblock %}
+
+{% block content %}{% endblock %}
+</body>
+</html>

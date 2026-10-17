@@ -1,0 +1,49 @@
+.title_bar{
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.tag {
+  padding: 1px 20px;
+  border-radius: 5px;
+}
+
+#tag1{
+ background-color:  #FFFDFA;
+ color : #242843;
+}
+
+#tag2{
+ background-color: #242843;
+ color: #FFFDFA;
+}
+#tag3{
+ background-color: #242843;
+ margin-left: auto;
+}
+
+.main_container {
+  width: 82%;
+  margin: 40px auto;
+}
+
+.searchbar input{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+  border: 2px solid #8DD8E8;
+  background-color: #242843;
+}
+
+.button {
+  display: flex;
+  gap: 20px;
+  border: 2px solid #FFFDFA;
+}
+
+body {
+  background-color: #101827;
+  color: #FFFDFA;
+}
+
