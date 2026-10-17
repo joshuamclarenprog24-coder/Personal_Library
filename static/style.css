@@ -26,6 +26,7 @@
 .main_container {
   width: 82%;
   margin: 40px auto;
+
 }
 
 .searchbar input{
@@ -36,10 +37,25 @@
   background-color: #242843;
 }
 
-.button {
+.buttons {
   display: flex;
+  justify-content: flex-start;
   gap: 20px;
+}
+
+.buttons button {
+  background-color: transparent;
+  color: #FFFDFA;
   border: 2px solid #FFFDFA;
+  padding: 18px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  cursor: pointer;
+}
+
+.book_list_title { 
+  margin-top: 60px;
 }
 
 body {

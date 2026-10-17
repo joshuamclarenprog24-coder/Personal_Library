@@ -21,15 +21,17 @@
   <div class="main_container">
     <div class="searchbar">
         <input type="text" placeholder="Search books...">
-    </div>  
-    {% block search_buttons %}
-    <div> 
-      
     </div>
-    {% endblock %}
+    <div class="buttons">
+      {% for key in buttons %}
+        <div class="buttons">
+          <button>{{ buttons[key]["text"]}}</button> 
+        </div>
+      {% endfor %}
+    </div>
+{% block content %}{% endblock %}
   </div>
 {% endblock %}
 
-{% block content %}{% endblock %}
 </body>
 </html>
