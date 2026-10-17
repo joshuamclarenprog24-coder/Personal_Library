@@ -58,8 +58,27 @@
   margin-top: 60px;
 }
 
+table {
+  width: 100%;
+}
+
+td{
+    padding: 12px 10px;
+    font-size: 24px;
+}
+th {
+    padding: 12px 10px;
+    font-size: 30px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #303653;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #242843;
+}
 body {
   background-color: #101827;
   color: #FFFDFA;
 }
-

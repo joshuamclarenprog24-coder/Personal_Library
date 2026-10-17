@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 import os
 
@@ -15,9 +15,9 @@ title_bar = {
 }
 
 buttons = {
-        1: {"text":"SEARCH", "class": "btn-search"},
-        2: {"text":"ADD NEW", "class": "btn-add-new"},
-        3: {"text":"SHOWN WITHDRAWN", "class" : "btn-show-WITHDRAWN"},
+        1: {"text":"SEARCH", "class": "btn-search", "route": None},
+        2: {"text":"ADD NEW", "class": "btn-add-new", "route": "add_book" },
+        3: {"text":"SHOW COMPLETED", "class" : "btn-show-WITHDRAWN", "route" : None},
 }
 
 class Books(db.Model):
@@ -38,3 +38,28 @@ def index():
                            title_bar=title_bar,
                            buttons=buttons, 
                            books=books)
+
+@app.route('/add_book', methods=['GET', 'POST'])
+def add_book():
+    if request.method == 'POST':
+
+        title=request.form['title']
+        author=request.form['author']
+        completed=request.form['completed']
+        review=request.form['review']
+
+        book = Books( 
+                 title=title,
+                 author=author,
+                 completed=completed,
+                 review=review,
+        )
+        db.session.add(book)
+        db.session.commit()
+    
+        return redirect(url_for('add_book'))
+
+    return render_template('add_book.html', 
+                           title_bar=title_bar,
+                           buttons=buttons)
+

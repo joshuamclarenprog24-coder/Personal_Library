@@ -24,10 +24,16 @@
     </div>
     <div class="buttons">
       {% for key in buttons %}
-        <div class="buttons">
+      {% if buttons[key]['route'] is not none %}
+      <a href="{{ url_for(buttons[key]['route']) }}">
           <button>{{ buttons[key]["text"]}}</button> 
-        </div>
-      {% endfor %}
+      </a>
+      {% else %}
+        <button type="button">
+          {{ buttons[key]['text'] }}
+        </button>
+     {% endif %}
+    {% endfor %}
     </div>
 {% block content %}{% endblock %}
   </div>
