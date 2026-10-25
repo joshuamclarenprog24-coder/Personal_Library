@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<h1 class="book_list_title">BOOKS</h1>
+<table>
+  <thead>
+    <tr>
+      <th> Title </th>
+      <th> Author </th>
+      <th> Review </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for book in books %}
+    {% if book.completed.lower() == "yes" %}
+    <tr>
+        <td>{{ book.title}} </td>
+        <td> {{ book.author}} </td>
+        <td> {{ book.review}} </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+  <tbody>
+</table>
+{% endblock %}
+
