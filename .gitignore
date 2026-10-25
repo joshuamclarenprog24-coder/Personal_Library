@@ -25,3 +25,6 @@ instance/
 
 # OS files
 .DS_Store
+
+flask.log
+

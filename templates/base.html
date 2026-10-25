@@ -10,9 +10,17 @@
 {% block title_bar %}
 <div class="title_bar">
   {% for key in  title_bar %}
+  {% if title_bar[key]["class"] == "title" %}
+  <div class="tag" id="tag{{key}}">
+    <a href ="{{ url_for('index') }}">
+    <p> {{ title_bar[key]["text"] }} </p>
+    </a>
+  </div>
+  {% else %}
   <div class="tag" id="tag{{key}}">
     <p> {{ title_bar[key]["text"] }} </p>
   </div>
+  {% endif %}
   {% endfor %}
 </div>
 {% endblock %}

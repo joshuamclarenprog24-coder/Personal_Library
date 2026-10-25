@@ -3,6 +3,11 @@
   justify-content: flex-start;
 }
 
+.title_bar a {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 .tag {
   padding: 1px 20px;
